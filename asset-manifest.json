@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web-aldo/static/css/main.25d11cf6.css",
-    "main.js": "/web-aldo/static/js/main.dd9ee6bc.js",
+    "main.css": "/web-aldo/static/css/main.e6c13ad2.css",
+    "main.js": "/web-aldo/static/js/main.c5df3f45.js",
     "static/js/453.d7f74382.chunk.js": "/web-aldo/static/js/453.d7f74382.chunk.js",
     "static/media/Muestra_1.png": "/web-aldo/static/media/Muestra_1.41124801ae5d7ab88ade.png",
     "static/media/Asset 8 nº1 Tablero.png": "/web-aldo/static/media/Asset 8 nº1 Tablero.a1b474e26caeb487615d.png",
@@ -53,14 +53,13 @@
     "static/media/Asset Nº3 Desplegable de texto nº11.png": "/web-aldo/static/media/Asset Nº3 Desplegable de texto nº11.8336babd4693197367ae.png",
     "static/media/Asset Nº3 Desplegable de texto nº4.png": "/web-aldo/static/media/Asset Nº3 Desplegable de texto nº4.72a3f5817388a1ee0c28.png",
     "static/media/Asset Nº1 Desplegable de texto nº10.png": "/web-aldo/static/media/Asset Nº1 Desplegable de texto nº10.47e25f666563e210600f.png",
-    "static/media/logo.svg": "/web-aldo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/web-aldo/index.html",
-    "main.25d11cf6.css.map": "/web-aldo/static/css/main.25d11cf6.css.map",
-    "main.dd9ee6bc.js.map": "/web-aldo/static/js/main.dd9ee6bc.js.map",
+    "main.e6c13ad2.css.map": "/web-aldo/static/css/main.e6c13ad2.css.map",
+    "main.c5df3f45.js.map": "/web-aldo/static/js/main.c5df3f45.js.map",
     "453.d7f74382.chunk.js.map": "/web-aldo/static/js/453.d7f74382.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.25d11cf6.css",
-    "static/js/main.dd9ee6bc.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c5df3f45.js"
   ]
 }
