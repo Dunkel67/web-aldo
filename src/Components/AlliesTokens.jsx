@@ -51,7 +51,7 @@ export default function AlliesTokens ({tokensAliados, handleHideAllyTokens, chan
                     {tokensAliados.map((tokens, index) => (
                         <img
                             key={tokens}
-                            src={require(`../Resources/Tokens aliados/${tokensAliados[11]}`)}
+                            src={require(`../Resources/Placeholder/Nada.png`)}
                             alt={`Token ${chargeLastToken(tokens)}`}
                             style={{
                                 width: '75px',

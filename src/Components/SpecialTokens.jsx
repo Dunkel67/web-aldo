@@ -44,7 +44,7 @@ export default function SpecialTokens ({tokensEspeciales, handleHideSpecialToken
                 {tokensEspeciales.map((tokens, index) => (
                     <img
                         key={tokens}
-                        src={require(`../Resources/Tokens universales/${chargeLastToken(tokens)}`)}
+                        src={require(`../Resources/Placeholder/Nada.png`)}
                         alt={`Token ${chargeLastToken(tokens)}`}
                         style={{
                             width: '75px',

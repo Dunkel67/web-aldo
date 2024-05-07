@@ -53,7 +53,7 @@ export default function EnemiesTokens ({tokensEnemigos, handleHideEnemieTokens, 
                     {tokensEnemigos.map((tokens, index) => (
                         <img
                             key={tokens}
-                            src={require(`../Resources/Tokens enemigos/${chargeLastToken(tokens)}`)}
+                            src={require(`../Resources/Placeholder/Nada.png`)}
                             alt={`Token ${tokens}`}
                             style={{
                                 width: '75px',
