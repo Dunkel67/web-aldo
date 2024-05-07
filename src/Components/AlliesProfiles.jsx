@@ -90,7 +90,6 @@ export default function AlliesTokens ({ isClosedBlocker }) {
 
             <div hidden={isProfileSelectorHidden}
                 style={{
-                    backgroundColor: 'rgba(255, 0, 0, 0.5)',
                     position: 'absolute',
                     width: '116px',
                     height: '370px',

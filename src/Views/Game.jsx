@@ -53,30 +53,30 @@ export default function Game () {
     const [tokenEB2] = useState(['Token-Enemigo-B2-Dron-1.gif','Token-Enemigo-B2-Dron-2.gif','Token-Enemigo-B2-Meka.gif']);
     const [tokenEB3] = useState(['Token-Enemigo-B3-Dron-1.gif','Token-Enemigo-B3-Dron-2.gif','Token-Enemigo-B3-Meka.gif']);
     const [tokenEB4] = useState(['Token-Enemigo-B4-Dron-1.gif','Token-Enemigo-B4-Dron-2.gif','Token-Enemigo-B4-Meka.gif']);
-    const [tokenEC1] = useState(['Token-Enemigo-C1-Dron-1.gif','Token-Enemigo-C1-Dron-2.gif','Token-Enemigo-C1-Meka.gif']);
-    const [tokenEC2] = useState(['Token-Enemigo-C2-Dron-1.gif','Token-Enemigo-C2-Dron-2.gif','Token-Enemigo-C2-Meka.gif']);
-    const [tokenEC3] = useState(['Token-Enemigo-C3-Dron-1.gif','Token-Enemigo-C3-Dron-2.gif','Token-Enemigo-C3-Meka.gif']);
-    const [tokenEC4] = useState(['Token-Enemigo-C4-Dron-1.gif','Token-Enemigo-C4-Dron-2.gif','Token-Enemigo-C4-Meka.gif']);
-    const [tokenED1] = useState(['Token-Enemigo-D1-Dron-1.gif','Token-Enemigo-D1-Dron-2.gif','Token-Enemigo-D1-Meka.gif']);
-    const [tokenED2] = useState(['Token-Enemigo-D2-Dron-1.gif','Token-Enemigo-D2-Dron-2.gif','Token-Enemigo-D2-Meka.gif']);
-    const [tokenED3] = useState(['Token-Enemigo-D3-Dron-1.gif','Token-Enemigo-D3-Dron-2.gif','Token-Enemigo-D3-Meka.gif']);
-    const [tokenED4] = useState(['Token-Enemigo-D4-Dron-1.gif','Token-Enemigo-D4-Dron-2.gif','Token-Enemigo-D4-Meka.gif']);
-    const [tokenEE1] = useState(['Token-Enemigo-E1-Dron-1.gif','Token-Enemigo-E1-Dron-2.gif','Token-Enemigo-E1-Meka.gif']);
-    const [tokenEE2] = useState(['Token-Enemigo-E2-Dron-1.gif','Token-Enemigo-E2-Dron-2.gif','Token-Enemigo-E2-Meka.gif']);
-    const [tokenEE3] = useState(['Token-Enemigo-E3-Dron-1.gif','Token-Enemigo-E3-Dron-2.gif','Token-Enemigo-E3-Meka.gif']);
-    const [tokenEE4] = useState(['Token-Enemigo-E4-Dron-1.gif','Token-Enemigo-E4-Dron-2.gif','Token-Enemigo-E4-Meka.gif']);
-    const [tokenEF1] = useState(['Token-Enemigo-F1-Dron-1.gif','Token-Enemigo-F1-Dron-2.gif','Token-Enemigo-F1-Meka.gif']);
-    const [tokenEF2] = useState(['Token-Enemigo-F2-Dron-1.gif','Token-Enemigo-F2-Dron-2.gif','Token-Enemigo-F2-Meka.gif']);
-    const [tokenEF3] = useState(['Token-Enemigo-F3-Dron-1.gif','Token-Enemigo-F3-Dron-2.gif','Token-Enemigo-F3-Meka.gif']);
-    const [tokenEF4] = useState(['Token-Enemigo-F4-Dron-1.gif','Token-Enemigo-F4-Dron-2.gif','Token-Enemigo-F4-Meka.gif']);
-    const [tokenEG1] = useState(['Token-Enemigo-G1-Dron-1.gif','Token-Enemigo-G1-Dron-2.gif','Token-Enemigo-G1-Meka.gif']);
-    const [tokenEG2] = useState(['Token-Enemigo-G2-Dron-1.gif','Token-Enemigo-G2-Dron-2.gif','Token-Enemigo-G2-Meka.gif']);
-    const [tokenEG3] = useState(['Token-Enemigo-G3-Dron-1.gif','Token-Enemigo-G3-Dron-2.gif','Token-Enemigo-G3-Meka.gif']);
-    const [tokenEG4] = useState(['Token-Enemigo-G4-Dron-1.gif','Token-Enemigo-G4-Dron-2.gif','Token-Enemigo-G4-Meka.gif']);
-    const [tokenEH1] = useState(['Token-Enemigo-H1-Dron-1.gif','Token-Enemigo-H1-Dron-2.gif','Token-Enemigo-H1-Meka.gif']);
-    const [tokenEH2] = useState(['Token-Enemigo-H2-Dron-1.gif','Token-Enemigo-H2-Dron-2.gif','Token-Enemigo-H2-Meka.gif']);
-    const [tokenEH3] = useState(['Token-Enemigo-H3-Dron-1.gif','Token-Enemigo-H3-Dron-2.gif','Token-Enemigo-H3-Meka.gif']);
-    const [tokenEH4] = useState(['Token-Enemigo-H4-Dron-1.gif','Token-Enemigo-H4-Dron-2.gif','Token-Enemigo-H4-Meka.gif']);
+    const [tokenEC1] = useState(['Token-Enemigo-C1-Dron.gif','Token-Enemigo-C1-Meka.gif']);
+    const [tokenEC2] = useState(['Token-Enemigo-C2-Dron.gif','Token-Enemigo-C2-Meka.gif']);
+    const [tokenEC3] = useState(['Token-Enemigo-C3-Dron.gif','Token-Enemigo-C3-Meka.gif']);
+    const [tokenEC4] = useState(['Token-Enemigo-C4-Dron.gif','Token-Enemigo-C4-Meka.gif']);
+    const [tokenED1] = useState(['Token-Enemigo-D1-Dron.gif','Token-Enemigo-D1-Meka.gif']);
+    const [tokenED2] = useState(['Token-Enemigo-D2-Dron.gif','Token-Enemigo-D2-Meka.gif']);
+    const [tokenED3] = useState(['Token-Enemigo-D3-Dron.gif','Token-Enemigo-D3-Meka.gif']);
+    const [tokenED4] = useState(['Token-Enemigo-D4-Dron.gif','Token-Enemigo-D4-Meka.gif']);
+    const [tokenEE1] = useState(['Token-Enemigo-E1-Dron 1.gif','Token-Enemigo-E1-Dron 2.gif','Token-Enemigo-E1-Meka.gif']);
+    const [tokenEE2] = useState(['Token-Enemigo-E2-Dron 1.gif','Token-Enemigo-E2-Dron 2.gif','Token-Enemigo-E2-Meka.gif']);
+    const [tokenEE3] = useState(['Token-Enemigo-E3-Dron 1.gif','Token-Enemigo-E3-Dron 2.gif','Token-Enemigo-E3-Meka.gif']);
+    const [tokenEE4] = useState(['Token-Enemigo-E4-Dron 1.gif','Token-Enemigo-E4-Dron 2.gif','Token-Enemigo-E4-Meka.gif']);
+    const [tokenEF1] = useState(['Token-Enemigo-F1-Meka.gif']);
+    const [tokenEF2] = useState(['Token-Enemigo-F2-Meka.gif']);
+    const [tokenEF3] = useState(['Token-Enemigo-F3-Meka.gif']);
+    const [tokenEF4] = useState(['Token-Enemigo-F4-Meka.gif']);
+    const [tokenEG1] = useState(['Token-Enemigo-G1-Dron.gif','Token-Enemigo-G1-Meka.gif']);
+    const [tokenEG2] = useState(['Token-Enemigo-G2-Dron.gif','Token-Enemigo-G2-Meka.gif']);
+    const [tokenEG3] = useState(['Token-Enemigo-G3-Dron.gif','Token-Enemigo-G3-Meka.gif']);
+    const [tokenEG4] = useState(['Token-Enemigo-G4-Dron.gif','Token-Enemigo-G4-Meka.gif']);
+    const [tokenEH1] = useState(['Token-Enemigo-H1-Dron 1.gif','Token-Enemigo-H1-Dron 2.gif','Token-Enemigo-H1-Meka.gif']);
+    const [tokenEH2] = useState(['Token-Enemigo-H2-Dron 1.gif','Token-Enemigo-H2-Dron 2.gif','Token-Enemigo-H2-Meka.gif']);
+    const [tokenEH3] = useState(['Token-Enemigo-H3-Dron 1.gif','Token-Enemigo-H3-Dron 2.gif','Token-Enemigo-H3-Meka.gif']);
+    const [tokenEH4] = useState(['Token-Enemigo-H4-Dron 1.gif','Token-Enemigo-H4-Dron 2.gif','Token-Enemigo-H4-Meka.gif']);
     const [tokenEI1] = useState(['Token-Enemigo-I1-Meka.gif']);
     const [tokenEI2] = useState(['Token-Enemigo-I2-Meka.gif']);
     const [tokenEI3] = useState(['Token-Enemigo-I3-Meka.gif']);
@@ -258,6 +258,7 @@ export default function Game () {
                     style={{
                         width: '100%',
                         height: '100%',
+                        userSelect: 'none'
                     }}
                 />
             </div>
