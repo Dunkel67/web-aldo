@@ -1,16 +1,25 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createHashRouter,
+  RouterProvider
+} from 'react-router-dom';
 import Game from './Views/Game';
 import Test from './Views/Test';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Test/>} />
-        <Route path="/game" element={<Game/>} />
-      </Routes>
-    </Router>
-  );
-}
+const router = createHashRouter([
+  {
+    path: "/*",
+    element: <Test/>,
+  },
+  {
+    path: "/game",
+    element: <Game/>,
+  }
+]);
 
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
