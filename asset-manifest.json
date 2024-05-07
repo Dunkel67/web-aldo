@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/web-aldo/static/css/main.e6c13ad2.css",
-    "main.js": "/web-aldo/static/js/main.b8be2eb5.js",
+    "main.js": "/web-aldo/static/js/main.f1f021a1.js",
     "static/js/453.d7f74382.chunk.js": "/web-aldo/static/js/453.d7f74382.chunk.js",
     "static/media/Muestra_1.png": "/web-aldo/static/media/Muestra_1.41124801ae5d7ab88ade.png",
     "static/media/Asset 8 nº1 Tablero.png": "/web-aldo/static/media/Asset 8 nº1 Tablero.a1b474e26caeb487615d.png",
     "static/media/Asset 7 n3 Cinta superior.png": "/web-aldo/static/media/Asset 7 n3 Cinta superior.5bf05fd4477e3963215d.png",
     "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.7812d65bd2964a600a18.png",
     "static/media/Asset 7 Barra de perfiles.png": "/web-aldo/static/media/Asset 7 Barra de perfiles.ef6926d6595b290f5ecb.png",
+    "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.c921b4c231d64d248e3e.png",
     "static/media/Asset 7 n1 Cinta superior trasera.png": "/web-aldo/static/media/Asset 7 n1 Cinta superior trasera.d8a0b35df8feab87a251.png",
     "static/media/Token Aliado 2 Meka.gif": "/web-aldo/static/media/Token Aliado 2 Meka.83a8cda2aea7413c9221.gif",
     "static/media/Asset 7 n2 Cinta superior frontal.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior frontal.80494d7f6b41da5711c3.png",
@@ -55,11 +56,11 @@
     "static/media/Asset Nº1 Desplegable de texto nº10.png": "/web-aldo/static/media/Asset Nº1 Desplegable de texto nº10.47e25f666563e210600f.png",
     "index.html": "/web-aldo/index.html",
     "main.e6c13ad2.css.map": "/web-aldo/static/css/main.e6c13ad2.css.map",
-    "main.b8be2eb5.js.map": "/web-aldo/static/js/main.b8be2eb5.js.map",
+    "main.f1f021a1.js.map": "/web-aldo/static/js/main.f1f021a1.js.map",
     "453.d7f74382.chunk.js.map": "/web-aldo/static/js/453.d7f74382.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b8be2eb5.js"
+    "static/js/main.f1f021a1.js"
   ]
 }
