@@ -126,20 +126,14 @@ export default function Game () {
     const [tablePosImageSpecial, setTablePosImageSpecial] = useState(['Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png']);
 
     const changeImagePos = (index) => {
-        console.log(index);
-        console.log(cursorView);
-        console.log(cursorViewBlank);
         if (cursorView === cursorViewBlank) {
-            console.log('Blanco');
             setCursorView(tablePosImage[index]);
             setTablePosImage(values => values.map((value, i) => i === index ? cursorView : value));
             setTablePosImageSpecial(values => values.map((value, i) => i === index ? cursorView : value));
         } else if (cursorView.includes('Tokens universales')) {
-            console.log('Universal');
             setTablePosImageSpecial(values => values.map((value, i) => i === index ? cursorView : value));
             setCursorView(cursorViewBlank);
         } else {
-            console.log('Enemigo o aliado');
             setTablePosImage(values => values.map((value, i) => i === index ? cursorView : value));
             setCursorView(cursorViewBlank);
         }
