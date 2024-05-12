@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import TurnCounter from '../Components/TurnCounter';
 import BackgroundChanger from '../Components/BackgroundChanger';
@@ -10,6 +10,11 @@ import MiscBars from '../Components/MiscBars';
 import Armours from '../Components/Armours';
 import AlliesProfiles from '../Components/AlliesProfiles';
 import EnemiesProfiles from '../Components/EnemiesProfiles';
+import ObjectivesMenu from '../Components/ObjetivesMenu';
+import ConversationalPartner from '../Components/ConversationalPartner';
+import WeatherMenu from '../Components/WeatherMenu';
+import AlteredCondition from '../Components/AlteredCondition';
+import AlteredConditionEnemies from '../Components/AlteredConditionEnemies';
 
 export default function Game () {
 
@@ -19,6 +24,128 @@ export default function Game () {
         cursor.current.style.top = `${e.clientY}px`;
         cursor.current.style.left = `${e.clientX}px`;
     }
+
+    // Objetivo Secundario Nº1 -------------------------------------------------------------------------------------------------------------------------------
+
+    const [objective1] = useState(['Asset Nº1 Desplegable de selección nº1.png', 'Asset Nº1 Desplegable de texto nº1.png', 'Asset Nº3 Icono de objetivo nº1.png']);
+    const [objective2] = useState(['Asset Nº1 Desplegable de selección nº2.png', 'Asset Nº1 Desplegable de texto nº2.png', 'Asset Nº3 Icono de objetivo nº2.png']);
+    const [objective3] = useState(['Asset Nº1 Desplegable de selección nº3.png', 'Asset Nº1 Desplegable de texto nº3.png', 'Asset Nº3 Icono de objetivo nº3.png']);
+    const [objective4] = useState(['Asset Nº1 Desplegable de selección nº4.png', 'Asset Nº1 Desplegable de texto nº4.png', 'Asset Nº3 Icono de objetivo nº4.png']);
+    const [objective5] = useState(['Asset Nº1 Desplegable de selección nº5.png', 'Asset Nº1 Desplegable de texto nº5.png', 'Asset Nº3 Icono de objetivo nº5.png']);
+    const [objective6] = useState(['Asset Nº1 Desplegable de selección nº6.png', 'Asset Nº1 Desplegable de texto nº6.png', 'Asset Nº3 Icono de objetivo nº6.png']);
+    const [objective7] = useState(['Asset Nº1 Desplegable de selección nº7.png', 'Asset Nº1 Desplegable de texto nº7.png', 'Asset Nº3 Icono de objetivo nº7.png']);
+    const [objective8] = useState(['Asset Nº1 Desplegable de selección nº8.png', 'Asset Nº1 Desplegable de texto nº8.png', 'Asset Nº3 Icono de objetivo nº8.png']);
+    const [objective9] = useState(['Asset Nº1 Desplegable de selección nº9.png', 'Asset Nº1 Desplegable de texto nº9.png', 'Asset Nº3 Icono de objetivo nº9.png']);
+    const [objective10] = useState(['Asset Nº1 Desplegable de selección nº10.png', 'Asset Nº1 Desplegable de texto nº10.png', 'Asset Nº3 Icono de objetivo nº10.png']);
+    const [objective11] = useState(['Asset Nº1 Desplegable de selección nº11.png', 'Asset Nº1 Desplegable de texto nº11.png', 'Asset Nº3 Icono de objetivo nº11.png']);
+    const [objective12] = useState(['Asset Nº1 Desplegable de selección nº12.png', 'Asset Nº1 Desplegable de texto nº12.png', 'Asset Nº3 Icono de objetivo nº12.png']);
+
+    const [objectives] = useState([objective1, objective2, objective3, objective4, objective5, objective6, objective7, objective8, objective9, objective10, objective11, objective12]);
+
+    const [hideObjectives, setHideObjectives] = useState(true);
+
+    const handleHideObjectives = () => {
+        setHideObjectives(!hideObjectives);
+    };
+
+    const [activeObjective, setActiveObjective] = useState(0);
+
+    const [hideContextBlock, setHideContextBlock] = useState(true);
+
+    const handleHideContextBlock = () => {
+        setHideContextBlock(!hideContextBlock);
+    };
+
+    // Interlocutores Nº2 ------------------------------------------------------------------------------------------------------------------------------------
+
+    const [interlocutor1] = useState(['Asset Nº2 Desplegable de selección nº1.png', 'Asset Nº2 Desplegable de texto nº1.png', 'Asset Nº3 Icono de interlocutor nº1.png']);
+    const [interlocutor2] = useState(['Asset Nº2 Desplegable de selección nº2.png', 'Asset Nº2 Desplegable de texto nº2.png', 'Asset Nº3 Icono de interlocutor nº2.png']);
+    const [interlocutor3] = useState(['Asset Nº2 Desplegable de selección nº3.png', 'Asset Nº2 Desplegable de texto nº3.png', 'Asset Nº3 Icono de interlocutor nº3.png']);
+    const [interlocutor4] = useState(['Asset Nº2 Desplegable de selección nº4.png', 'Asset Nº2 Desplegable de texto nº4.png', 'Asset Nº3 Icono de interlocutor nº4.png']);
+
+    const [interlocutors] = useState([interlocutor1, interlocutor2, interlocutor3, interlocutor4]);
+
+    const [hideInterlocutors, setHideInterlocutors] = useState(true);
+
+    const handleHideInterlocutors = () => {
+        setHideInterlocutors(!hideInterlocutors);
+    };
+
+    const [activeInterlocutor, setActiveInterlocutor] = useState(0);
+
+    const [hideInterlocutorContext, setHideInterlocutorContext] = useState(true);
+
+    const handleHideInterlocutorContext = () => {
+        setHideInterlocutorContext(!hideInterlocutorContext);
+    };
+
+    // Clima Nº3 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+    const [weather1] = useState(['Asset Nº3 Desplegable de selección nº1.png', 'Asset Nº3 Desplegable de texto nº1.png', 'Asset Nº3 Icono de clima nº1.png']);
+    const [weather2] = useState(['Asset Nº3 Desplegable de selección nº2.png', 'Asset Nº3 Desplegable de texto nº2.png', 'Asset Nº3 Icono de clima nº2.png']);
+    const [weather3] = useState(['Asset Nº3 Desplegable de selección nº3.png', 'Asset Nº3 Desplegable de texto nº3.png', 'Asset Nº3 Icono de clima nº3.png']);
+    const [weather4] = useState(['Asset Nº3 Desplegable de selección nº4.png', 'Asset Nº3 Desplegable de texto nº4.png', 'Asset Nº3 Icono de clima nº4.png']);
+    const [weather5] = useState(['Asset Nº3 Desplegable de selección nº5.png', 'Asset Nº3 Desplegable de texto nº5.png', 'Asset Nº3 Icono de clima nº5.png']);
+    const [weather6] = useState(['Asset Nº3 Desplegable de selección nº6.png', 'Asset Nº3 Desplegable de texto nº6.png', 'Asset Nº3 Icono de clima nº6.png']);
+    const [weather7] = useState(['Asset Nº3 Desplegable de selección nº7.png', 'Asset Nº3 Desplegable de texto nº7.png', 'Asset Nº3 Icono de clima nº7.png']);
+    const [weather8] = useState(['Asset Nº3 Desplegable de selección nº8.png', 'Asset Nº3 Desplegable de texto nº8.png', 'Asset Nº3 Icono de clima nº8.png']);
+    const [weather9] = useState(['Asset Nº3 Desplegable de selección nº9.png', 'Asset Nº3 Desplegable de texto nº9.png', 'Asset Nº3 Icono de clima nº9.png']);
+    const [weather10] = useState(['Asset Nº3 Desplegable de selección nº10.png', 'Asset Nº3 Desplegable de texto nº10.png', 'Asset Nº3 Icono de clima nº10.png']);
+    const [weather11] = useState(['Asset Nº3 Desplegable de selección nº11.png', 'Asset Nº3 Desplegable de texto nº11.png', 'Asset Nº3 Icono de clima nº11.png']);
+    const [weather12] = useState(['Asset Nº3 Desplegable de selección nº12.png', 'Asset Nº3 Desplegable de texto nº12.png', 'Asset Nº3 Icono de clima nº12.png']);
+
+    const [weathers] = useState([weather1, weather2, weather3, weather4, weather5, weather6, weather7, weather8, weather9, weather10, weather11, weather12]);
+
+    const [hideWeathers, setHideWeathers] = useState(true);
+
+    const handleHideWeathers = () => {
+        setHideWeathers(!hideWeathers);
+    };
+
+    const [activeWeather, setActiveWeather] = useState(0);
+
+    const [hideWeatherContext, setHideWeatherContext] = useState(true);
+
+    const handleHideWeatherContext = () => {
+        setHideWeatherContext(!hideWeatherContext);
+    };
+
+    // Escenarios Nº7 ----------------------------------------------------------------------------------------------------------------------------------------
+
+    const [scenario1] = useState(['Asset 7 n1 Fondo Completo.png', 'Asset 7 Fondo scrolleable.png', 'Asset 7 n1 Fondo Desplegables.png']);
+    const [scenario2] = useState(['Asset 7 n2 Fondo completo.png', 'Asset 7 n2 Fondo scrolleable.png', 'Asset 7 n1 Fondo Desplegables.png']);
+    const [scenario3] = useState(['Asset 7 n3 Cinta superior.png', 'Asset 7 Barra de perfiles.png', 'Asset 7 n1 Fondo Desplegables.png', 'Asset 7 n3 Fondo scrolleable.png']);
+
+    const [scenarios] = useState([scenario1, scenario2, scenario3]);
+
+    const [backgroundNumber, setBackgroundNumber] = useState(0);
+
+    // Tablero Nº8 -------------------------------------------------------------------------------------------------------------------------------------------
+
+    const [tablePosImage, setTablePosImage] = useState(['Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png']);
+    const [tablePosImageSpecial, setTablePosImageSpecial] = useState(['Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png', 'Placeholder/Nada.png']);
+
+    const changeImagePos = (index) => {
+        console.log(index);
+        console.log(cursorView);
+        console.log(cursorViewBlank);
+        if (cursorView === cursorViewBlank) {
+            console.log('Blanco');
+            setCursorView(tablePosImage[index]);
+            setTablePosImage(values => values.map((value, i) => i === index ? cursorView : value));
+            setTablePosImageSpecial(values => values.map((value, i) => i === index ? cursorView : value));
+        } else if (cursorView.includes('Tokens universales')) {
+            console.log('Universal');
+            setTablePosImageSpecial(values => values.map((value, i) => i === index ? cursorView : value));
+            setCursorView(cursorViewBlank);
+        } else {
+            console.log('Enemigo o aliado');
+            setTablePosImage(values => values.map((value, i) => i === index ? cursorView : value));
+            setCursorView(cursorViewBlank);
+        }
+    }
+
+    const [opacity] = useState(0);
 
     // Tokens Aliados Nº10 -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -172,7 +299,6 @@ export default function Game () {
     const changeCurrentSelectedToken = (tokens, type) => {
         hideAllMenus();
         setActiveArray(tokens);
-        console.log(type);
         switch (type) {
             case 0:
                 setMenuType('Tokens aliados/');
@@ -192,26 +318,20 @@ export default function Game () {
     }
 
     const advanceArray = () => {
-        console.log('hola');
-        console.log(activeArray);
         if (activeArray !== null) {
-            console.log('hola2');
             activeArray.map((token, index) => {
-                console.log('hola3');
                 let tokenComplete = menuType+token;
-                console.log(tokenComplete);
-                console.log(cursorView);
-                console.log(index);
-                console.log(activeArray.length);
                 if (tokenComplete === cursorView && index < activeArray.length - 1) {
-                    console.log('siguiente');
                     setCursorView(menuType+activeArray[index + 1]);
                 } else if (tokenComplete === cursorView && index === activeArray.length -1) {
-                    console.log('borrado');
                     setCursorView(cursorViewBlank);
                     setActiveArray(null);
                 }
             });
+        } else {
+            if (cursorView !== cursorViewBlank) {
+                setCursorView(cursorViewBlank);
+            }
         }
     }
 
@@ -221,34 +341,156 @@ export default function Game () {
 
     const [hideCursor, setHideCursor] = useState(false);
 
-    const [backgroundNumber, setBackgroundNumber] = useState(0);
-
     const [isClosedBlocker, setIsClosedBlocker] = useState(false);
 
     const handleClickBlocker = () => {
         setIsClosedBlocker(!isClosedBlocker);
     };
 
+    // -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+    const isBackgroundVisible = (number) => {
+        return backgroundNumber === number ? false : true;
+    };
+
+    const [position, setPosition] = useState(-1920);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (position < 0) {
+                setPosition(position + 1);
+            } else {
+                setPosition(-1920);
+            }
+        }, 100);
+
+        return () => clearInterval(interval);
+    }, [position]);
+
     return (
         <div className='page-container' onMouseMove={changePosition} onClick={advanceArray}
             style={{
-                backgroundImage: `url(${require('../Resources/Fondos/Muestra_1.png')})`,
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
                 width: '1920px',
                 height: '1080px',
+                overflowX: 'hidden',
+                overflowY: 'hidden',
+                scrollbarWidth: 'none'
             }}
         >
 
+            <div className='background1' hidden={isBackgroundVisible(0)}>
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][0])}
+                    alt='background11'
+                    style={{
+                        position: 'absolute',
+                        
+                    }}
+                />
+
+                <img
+                    key={backgroundNumber}
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][1])}
+                    alt='background12'
+                    style={{
+                        position: 'relative',
+                        zIndex: '1',
+                        left: `${position}px`
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][2])}
+                    alt='background13'
+                    style={{
+                        position: 'absolute',
+                        zIndex: '2',
+                        left: '0px',
+                        top: '0px'
+                    }}
+                />
+            </div>
+
+            <div className='background2' hidden={isBackgroundVisible(1)}>
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][0])}
+                    alt='background21'
+                    style={{
+                        position: 'absolute',
+                        zIndex: '1'
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][1])}
+                    alt='background22'
+                    style={{
+                        position: 'relative',
+                        left: `${position}px`
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][2])}
+                    alt='background23'
+                    style={{
+                        position: 'absolute',
+                        zIndex: '2',
+                        left: '0px',
+                        top: '0px'
+                    }}
+                />
+            </div>
+
+            <div className='background3' hidden={isBackgroundVisible(2)}>
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][0])}
+                    alt='background31'
+                    style={{
+                        position: 'absolute'
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][3])}
+                    alt='background32'
+                    style={{
+                        position: 'relative',
+                        left: `${position}px`,
+                        zIndex: '1'
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][2])}
+                    alt='background33'
+                    style={{
+                        position: 'absolute',
+                        zIndex: '2',
+                        left: '0px',
+                        top: '0px'
+                    }}
+                />
+
+                <img
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][1])}
+                    alt='background34'
+                    style={{
+                        position: 'absolute',
+                        zIndex: '2',
+                        left: '0px',
+                        top: '0px'
+                    }}
+                />
+            </div>
+
             <div className="cursor-style" ref={cursor}
                 style={{
-                    width: '10rem',
-                    height: '10rem',
-                    position: 'fixed',
-                    transformOrigin: '100% 100%',
-                    transform: 'translate(-50%, -75%)',
+                    width: '360px',
+                    height: '210px',
                     pointerEvents: 'none',
-                    zIndex: '3'
+                    zIndex: '6',
+                    position: 'fixed',
                 }}
             >
                 <img
@@ -256,11 +498,140 @@ export default function Game () {
                     alt='Cursor'
                     hidden={hideCursor}
                     style={{
-                        width: '100%',
-                        height: '100%',
+                        width: '10rem',
+                        height: '10rem',
+                        position: 'absolute',
+                        top: '-150px',
+                        left: '-75px',
                         userSelect: 'none'
                     }}
                 />
+
+                <img
+                    src={require(`../Resources/Nº 1 Objetivo secundario/${objectives[activeObjective][1]}`)}
+                    alt='context-objective'
+                    hidden={hideContextBlock}
+                    style={{
+                        userSelect: 'none',
+                        position: 'absolute'
+                    }}
+                />
+
+                <img
+                    src={require(`../Resources/Nº 2 interlocutor/${interlocutors[activeInterlocutor][1]}`)}
+                    alt='context-interlocutor'
+                    hidden={hideInterlocutorContext}
+                    style={{
+                        userSelect: 'none',
+                        position: 'absolute'
+                    }}
+                />
+
+                <img
+                    src={require(`../Resources/Nº 3 Clima/${weathers[activeWeather][1]}`)}
+                    alt='context-weather'
+                    hidden={hideWeatherContext}
+                    style={{
+                        userSelect: 'none',
+                        position: 'absolute'
+                    }}
+                />
+            </div>
+
+            <div className='objectives-button'
+                style={{
+                    backgroundImage: `url(${require('../Resources/Nº 1 Objetivo secundario/'+objectives[activeObjective][2])})`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    width: '120px',
+                    height: '120px',
+                    position: 'absolute',
+                    top: '6px',
+                    left: '12px',
+                    zIndex: '2',
+                    cursor: 'pointer'
+                }}
+                onClick={() => {
+                    if (!isClosedBlocker) handleHideObjectives();
+                }}
+                onMouseEnter={handleHideContextBlock}
+                onMouseLeave={handleHideContextBlock}
+            >
+            </div>
+
+            <div className='objectives-menu' hidden={hideObjectives}
+                style={{
+                    position: 'absolute',
+                    top: '126px',
+                    left: '20px',
+                    zIndex: '4'
+                }}
+            >
+                <ObjectivesMenu objectives={objectives} handleHideObjectives={handleHideObjectives} setActiveObjective={setActiveObjective}></ObjectivesMenu>
+            </div>
+
+            <div className='interlocutor-button'
+                style={{
+                    backgroundImage: `url(${require('../Resources/Nº 2 interlocutor/'+interlocutors[activeInterlocutor][2])})`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    width: '120px',
+                    height: '120px',
+                    position: 'absolute',
+                    top: '6px',
+                    left: '150px',
+                    zIndex: '2',
+                    cursor: 'pointer'
+                }}
+                onClick={() => {
+                    if (!isClosedBlocker) handleHideInterlocutors();
+                }}
+                onMouseEnter={handleHideInterlocutorContext}
+                onMouseLeave={handleHideInterlocutorContext}
+            >
+            </div>
+
+            <div className='interlocutor-menu' hidden={hideInterlocutors}
+                style={{
+                    position: 'absolute',
+                    top: '126px',
+                    left: '158px',
+                    zIndex: '4'
+                }}
+            >
+                <ConversationalPartner interlocutors={interlocutors} handleHideInterlocutors={handleHideInterlocutors} setActiveInterlocutor={setActiveInterlocutor}></ConversationalPartner>
+            </div>
+
+            <div className='weather-button'
+                style={{
+                    backgroundImage: `url(${require('../Resources/Nº 3 Clima/'+weathers[activeWeather][2])})`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    width: '120px',
+                    height: '120px',
+                    position: 'absolute',
+                    top: '6px',
+                    left: '288px',
+                    zIndex: '2',
+                    cursor: 'pointer'
+                }}
+                onClick={() => {
+                    if (!isClosedBlocker) handleHideWeathers();
+                }}
+                onMouseEnter={handleHideWeatherContext}
+                onMouseLeave={handleHideWeatherContext}
+            >
+            </div>
+
+            <div className='weather-menu' hidden={hideWeathers}
+                style={{
+                    position: 'absolute',
+                    top: '126px',
+                    left: '296px',
+                    zIndex: '4'
+                }}
+            >
+                <WeatherMenu weathers={weathers} handleHideWeathers={handleHideWeathers} setActiveWeather={setActiveWeather}></WeatherMenu>
             </div>
 
             <div className='blocker'
@@ -272,8 +643,9 @@ export default function Game () {
                     height: '81px',
                     position: 'absolute',
                     top: '9px',
+                    cursor: 'pointer',
                     right: '240px',
-                    zIndex: '1'
+                    zIndex: '3'
                 }}
                 onClick={handleClickBlocker}
             ></div>
@@ -284,7 +656,7 @@ export default function Game () {
                     top: '30px',
                     right: '140px',
                     cursor: 'pointer',
-                    zIndex: '1'
+                    zIndex: '3'
                 }}
             >
                 <BackgroundChanger isClosedBlocker={isClosedBlocker} backgroundNumber={backgroundNumber} setBackgroundNumber={setBackgroundNumber}></BackgroundChanger>
@@ -296,7 +668,7 @@ export default function Game () {
                     top: '6px',
                     right: '12px',
                     cursor: 'pointer',
-                    zIndex: '1'
+                    zIndex: '3'
                 }}
             >
                 <TurnCounter></TurnCounter>
@@ -332,7 +704,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '159px',
                     left: '0px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlliesTokens tokensAliados={tokensAliados} handleHideAllyTokens={handleHideAllyTokens} changeCurrentSelectedToken={changeCurrentSelectedToken}></AlliesTokens>
@@ -357,7 +729,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '159px',
                     right: '0px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <EnemiesTokens tokensEnemigos={tokensEnemigos} handleHideEnemieTokens={handleHideEnemieTokens} changeCurrentSelectedToken={changeCurrentSelectedToken}></EnemiesTokens>
@@ -382,7 +754,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '0px',
                     left: '441px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <SpecialTokens tokensEspeciales={tokensEspeciales} handleHideSpecialTokens={handleHideSpecialTokens} changeCurrentSelectedToken={changeCurrentSelectedToken}></SpecialTokens>
@@ -488,8 +860,1697 @@ export default function Game () {
             >
                 <EnemiesProfiles isClosedBlocker={isClosedBlocker}></EnemiesProfiles>
             </div>
+
+            <div className='altered-condition-1'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '183px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredCondition></AlteredCondition>
+            </div>
+
+            <div className='altered-condition-2'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '417px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredCondition></AlteredCondition>
+            </div>
+
+            <div className='altered-condition-3'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '651px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredCondition></AlteredCondition>
+            </div>
+
+            <div className='altered-condition-4'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '885px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredCondition></AlteredCondition>
+            </div>
+
+            <div className='altered-condition-5'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '1145px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredConditionEnemies></AlteredConditionEnemies>
+            </div>
+
+            <div className='altered-condition-6'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '1379px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredConditionEnemies></AlteredConditionEnemies>
+            </div>
+
+            <div className='altered-condition-7'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '1613px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredConditionEnemies></AlteredConditionEnemies>
+            </div>
+
+            <div className='altered-condition-8'
+                style={{
+                    position: 'absolute',
+                    bottom: '93px',
+                    left: '1847px',
+                    zIndex: '3'
+                }}
+            >
+                <AlteredConditionEnemies></AlteredConditionEnemies>
+            </div>
+
+            <img className='table-pos-1-image'
+                src={require('../Resources/'+tablePosImage[0])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '455px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-1-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[0])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '455px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-1-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '512px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(0)}
+            >
+            </button>
+
+            <img className='table-pos-2-image'
+                src={require('../Resources/'+tablePosImage[1])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '557px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-2-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[1])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '557px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-2-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '614px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(1)}
+            >
+            </button>
+
+            <img className='table-pos-3-image'
+                src={require('../Resources/'+tablePosImage[2])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '659px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-3-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[2])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '659px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-3-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '712px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(2)}
+            >
+            </button>
+
+            <img className='table-pos-4-image'
+                src={require('../Resources/'+tablePosImage[3])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '761px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-4-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[3])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '761px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-4-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '806px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(3)}
+            >
+            </button>
+
+            <img className='table-pos-5-image'
+                src={require('../Resources/'+tablePosImage[4])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1002px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-5-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[4])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1002px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-5-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '1047px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(4)}
+            >
+            </button>
+
+            <img className='table-pos-6-image'
+                src={require('../Resources/'+tablePosImage[5])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1104px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-6-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[5])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1104px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-6-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '1144px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(5)}
+            >
+            </button>
+
+            <img className='table-pos-7-image'
+                src={require('../Resources/'+tablePosImage[6])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1206px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-7-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[6])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1206px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-7-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '1240px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(6)}
+            >
+            </button>
+
+            <img className='table-pos-8-image'
+                src={require('../Resources/'+tablePosImage[7])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1308px',
+                    zIndex: '7'
+                }}
+            />
+
+            <img className='table-pos-8-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[7])}
+                alt='table2'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '230px',
+                    left: '1308px',
+                    zIndex: '8'
+                }}
+            />
+
+            <button className='table-pos-8-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '362px',
+                    left: '1336px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(7)}
+            >
+            </button>
+
+            <img className='table-pos-9-image'
+                src={require('../Resources/'+tablePosImage[8])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '410px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-9-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[8])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '410px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-9-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '475px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(8)}
+            >
+            </button>
+
+            <img className='table-pos-10-image'
+                src={require('../Resources/'+tablePosImage[9])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '516px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-10-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[9])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '516px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-10-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '579px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(9)}
+            >
+            </button>
+
+            <img className='table-pos-11-image'
+                src={require('../Resources/'+tablePosImage[10])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '625px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-11-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[10])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '625px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-11-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '688px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(10)}
+            >
+            </button>
+
+            <img className='table-pos-12-image'
+                src={require('../Resources/'+tablePosImage[11])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '735px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-12-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[11])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '735px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-12-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '790px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(11)}
+            >
+            </button>
+
+            <img className='table-pos-13-image'
+                src={require('../Resources/'+tablePosImage[12])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1010px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-13-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[12])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1010px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-13-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '1057px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(12)}
+            >
+            </button>
+
+            <img className='table-pos-14-image'
+                src={require('../Resources/'+tablePosImage[13])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1116px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-14-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[13])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1116px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-14-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '1164px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(13)}
+            >
+            </button>
+
+            <img className='table-pos-15-image'
+                src={require('../Resources/'+tablePosImage[14])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1223px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-15-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[14])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1223px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-15-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '1266px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(14)}
+            >
+            </button>
+
+            <img className='table-pos-16-image'
+                src={require('../Resources/'+tablePosImage[15])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1333px',
+                    zIndex: '9'
+                }}
+            />
+
+            <img className='table-pos-16-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[15])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '290px',
+                    left: '1333px',
+                    zIndex: '10'
+                }}
+            />
+
+            <button className='table-pos-16-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '40px',
+                    top: '417px',
+                    left: '1376px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(15)}
+            >
+            </button>
+
+            <img className='table-pos-17-image'
+                src={require('../Resources/'+tablePosImage[16])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '360px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-17-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[16])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '360px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-17-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '426px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(16)}
+            >
+            </button>
+
+            <img className='table-pos-18-image'
+                src={require('../Resources/'+tablePosImage[17])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '472px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-18-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[17])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '472px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-18-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '542px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(17)}
+            >
+            </button>
+
+            <img className='table-pos-19-image'
+                src={require('../Resources/'+tablePosImage[18])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '595px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-19-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[18])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '595px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-19-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '664px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(18)}
+            >
+            </button>
+
+            <img className='table-pos-20-image'
+                src={require('../Resources/'+tablePosImage[19])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '715px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-20-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[19])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '715px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-20-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '774px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(19)}
+            >
+            </button>
+
+            <img className='table-pos-21-image'
+                src={require('../Resources/'+tablePosImage[20])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1020px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-21-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[20])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1020px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-21-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '1075px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(20)}
+            >
+            </button>
+
+            <img className='table-pos-22-image'
+                src={require('../Resources/'+tablePosImage[21])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1142px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-22-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[21])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1142px',
+                    zIndex: '11'
+                }}
+            />
+
+            <button className='table-pos-22-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '1191px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(21)}
+            >
+            </button>
+
+            <img className='table-pos-23-image'
+                src={require('../Resources/'+tablePosImage[22])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1270px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-23-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[22])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1270px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-23-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '1310px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(22)}
+            >
+            </button>
+
+            <img className='table-pos-24-image'
+                src={require('../Resources/'+tablePosImage[23])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1388px',
+                    zIndex: '11'
+                }}
+            />
+
+            <img className='table-pos-24-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[23])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '170px',
+                    height: '170px',
+                    top: '360px',
+                    left: '1388px',
+                    zIndex: '12'
+                }}
+            />
+
+            <button className='table-pos-24-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '55px',
+                    top: '475px',
+                    left: '1426px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(23)}
+            >
+            </button>
+
+            <img className='table-pos-25-image'
+                src={require('../Resources/'+tablePosImage[24])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '280px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-25-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[24])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '280px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-25-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '370px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(24)}
+            >
+            </button>
+
+            <img className='table-pos-26-image'
+                src={require('../Resources/'+tablePosImage[25])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '415px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-26-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[25])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '415px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-26-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '500px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(25)}
+            >
+            </button>
+
+            <img className='table-pos-27-image'
+                src={require('../Resources/'+tablePosImage[26])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '555px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-27-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[26])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '555px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-27-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '633px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(26)}
+            >
+            </button>
+
+            <img className='table-pos-28-image'
+                src={require('../Resources/'+tablePosImage[27])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '690px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-28-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[27])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '690px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-28-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '763px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(27)}
+            >
+            </button>
+
+            <img className='table-pos-29-image'
+                src={require('../Resources/'+tablePosImage[28])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1030px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-29-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[28])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1030px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-29-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '1090px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(28)}
+            >
+            </button>
+
+            <img className='table-pos-30-image'
+                src={require('../Resources/'+tablePosImage[29])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1170px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-30-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[29])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1170px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-30-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '1220px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(29)}
+            >
+            </button>
+
+            <img className='table-pos-31-image'
+                src={require('../Resources/'+tablePosImage[30])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1310px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-31-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[30])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1310px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-31-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '1352px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(30)}
+            >
+            </button>
+
+            <img className='table-pos-32-image'
+                src={require('../Resources/'+tablePosImage[31])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1447px',
+                    zIndex: '13'
+                }}
+            />
+
+            <img className='table-pos-32-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[31])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '440px',
+                    left: '1447px',
+                    zIndex: '14'
+                }}
+            />
+
+            <button className='table-pos-32-button'
+                style={{
+                    position: 'absolute',
+                    width: '70px',
+                    height: '70px',
+                    top: '547px',
+                    left: '1485px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(31)}
+            >
+            </button>
+
+            <img className='table-pos-33-image'
+                src={require('../Resources/'+tablePosImage[32])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '205px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-33-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[32])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '205px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-33-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '270px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(32)}
+            >
+            </button>
+
+            <img className='table-pos-34-image'
+                src={require('../Resources/'+tablePosImage[33])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '360px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-34-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[33])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '360px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-34-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '420px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(33)}
+            >
+            </button>
+
+            <img className='table-pos-35-image'
+                src={require('../Resources/'+tablePosImage[34])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '518px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-35-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[34])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '518px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-35-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '575px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(34)}
+            >
+            </button>
+
+            <img className='table-pos-36-image'
+                src={require('../Resources/'+tablePosImage[35])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '675px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-36-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[35])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '675px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-36-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '725px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(35)}
+            >
+            </button>
+
+            <img className='table-pos-37-image'
+                src={require('../Resources/'+tablePosImage[36])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1060px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-37-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[36])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1060px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-37-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '1100px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(36)}
+            >
+            </button>
+
+            <img className='table-pos-38-image'
+                src={require('../Resources/'+tablePosImage[37])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1212px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-38-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[37])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1212px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-38-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '1246px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(37)}
+            >
+            </button>
+
+            <img className='table-pos-39-image'
+                src={require('../Resources/'+tablePosImage[38])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1370px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-39-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[38])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1370px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-39-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '1393px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(38)}
+            >
+            </button>
+
+            <img className='table-pos-40-image'
+                src={require('../Resources/'+tablePosImage[39])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1525px',
+                    zIndex: '15'
+                }}
+            />
+
+            <img className='table-pos-40-image-special'
+                src={require('../Resources/'+tablePosImageSpecial[39])}
+                alt='table1'
+                style={{
+                    position: 'absolute',
+                    width: '180px',
+                    height: '180px',
+                    top: '552px',
+                    left: '1525px',
+                    zIndex: '16'
+                }}
+            />
+
+            <button className='table-pos-40-button'
+                style={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '90px',
+                    top: '639px',
+                    left: '1545px',
+                    zIndex: '20',
+                    opacity: opacity
+                }}
+                onClick={() => changeImagePos(39)}
+            >
+            </button>
             
         </div>
+
     );
 
 }
