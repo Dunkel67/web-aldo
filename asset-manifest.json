@@ -1,23 +1,31 @@
 {
   "files": {
     "main.css": "/web-aldo/static/css/main.e6c13ad2.css",
-    "main.js": "/web-aldo/static/js/main.466bf29b.js",
+    "main.js": "/web-aldo/static/js/main.c6f1a190.js",
     "static/js/453.398c4c17.chunk.js": "/web-aldo/static/js/453.398c4c17.chunk.js",
     "static/media/Muestra_1.png": "/web-aldo/static/media/Muestra_1.41124801ae5d7ab88ade.png",
     "static/media/Asset 8 nº1 Tablero.png": "/web-aldo/static/media/Asset 8 nº1 Tablero.a1b474e26caeb487615d.png",
     "static/media/Asset 7 n3 Cinta superior.png": "/web-aldo/static/media/Asset 7 n3 Cinta superior.5bf05fd4477e3963215d.png",
-    "static/media/Asset 7 Fondo scrolleable.png": "/web-aldo/static/media/Asset 7 Fondo scrolleable.4d74deeaf78527d47b68.png",
-    "static/media/Asset 7 n3 Fondo scrolleable.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable.c1dff5c320ff64f729ce.png",
+    "static/media/Asset 7 n1 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n1 Fondo scrolleable1.037ac511e3e0288ec77b.png",
     "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.7812d65bd2964a600a18.png",
-    "static/media/Asset 7 n2 Fondo scrolleable.png": "/web-aldo/static/media/Asset 7 n2 Fondo scrolleable.f1dfb08d508225756c1f.png",
     "static/media/Asset 7 n2 Fondo completo.png": "/web-aldo/static/media/Asset 7 n2 Fondo completo.0f02c51979b9614a6160.png",
     "static/media/Asset 7 n1 Fondo Completo.png": "/web-aldo/static/media/Asset 7 n1 Fondo Completo.20d4cf59ffaedc8e5268.png",
+    "static/media/Asset 7 n2 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n2 Fondo scrolleable1.ec168ff9bca99cfe9f09.png",
     "static/media/Asset 7 Barra de perfiles.png": "/web-aldo/static/media/Asset 7 Barra de perfiles.ef6926d6595b290f5ecb.png",
     "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.c921b4c231d64d248e3e.png",
     "static/media/Asset 7 n1 Cinta superior trasera.png": "/web-aldo/static/media/Asset 7 n1 Cinta superior trasera.d8a0b35df8feab87a251.png",
+    "static/media/Asset 7 n1 Fondo scrolleable2.png": "/web-aldo/static/media/Asset 7 n1 Fondo scrolleable2.1111210294f0d0fd8b5e.png",
+    "static/media/Asset 7 n3 Fondo scrolleable5.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable5.0f11f70bc9cd4ab7294c.png",
+    "static/media/Asset 7 n2 Fondo scrolleable2.png": "/web-aldo/static/media/Asset 7 n2 Fondo scrolleable2.2f9fb15275ed40316bb7.png",
+    "static/media/Asset 7 n3 Fondo scrolleable6.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable6.1d076859f382cb97a76f.png",
     "static/media/Token Aliado 2 Meka.gif": "/web-aldo/static/media/Token Aliado 2 Meka.83a8cda2aea7413c9221.gif",
+    "static/media/Asset 7 n3 Fondo scrolleable4.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable4.e5dabc351f40af8552a6.png",
+    "static/media/Asset 7 n3 Fondo scrolleable3.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable3.757a744f4816c2493e78.png",
     "static/media/Asset 7 n1 Fondo Desplegables.png": "/web-aldo/static/media/Asset 7 n1 Fondo Desplegables.eeca647c44c41abe8feb.png",
+    "static/media/Asset 7 n2 Fondo scrolleable3.png": "/web-aldo/static/media/Asset 7 n2 Fondo scrolleable3.ef946ead4c5793ee3074.png",
+    "static/media/Asset 7 n3 Fondo scrolleable2.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable2.bb386726abcc01757d9a.png",
     "static/media/Asset 7 n2 Cinta superior frontal.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior frontal.80494d7f6b41da5711c3.png",
+    "static/media/Asset 7 n3 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable1.3e5d842d67d727dfc4d9.png",
     "static/media/Token Aliado 9 Meka.gif": "/web-aldo/static/media/Token Aliado 9 Meka.90b0713c860ff8b6134f.gif",
     "static/media/Asset 7 n2 Cinta superior trasera.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior trasera.58a0ba653bb9ca00ac07.png",
     "static/media/Asset 7 n1 Cinta central frontal.png": "/web-aldo/static/media/Asset 7 n1 Cinta central frontal.d4fac9c8650a0661345a.png",
@@ -62,11 +70,11 @@
     "static/media/Asset Nº1 Desplegable de texto nº10.png": "/web-aldo/static/media/Asset Nº1 Desplegable de texto nº10.47e25f666563e210600f.png",
     "index.html": "/web-aldo/index.html",
     "main.e6c13ad2.css.map": "/web-aldo/static/css/main.e6c13ad2.css.map",
-    "main.466bf29b.js.map": "/web-aldo/static/js/main.466bf29b.js.map",
+    "main.c6f1a190.js.map": "/web-aldo/static/js/main.c6f1a190.js.map",
     "453.398c4c17.chunk.js.map": "/web-aldo/static/js/453.398c4c17.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.466bf29b.js"
+    "static/js/main.c6f1a190.js"
   ]
 }
