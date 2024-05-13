@@ -589,20 +589,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker1) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker1) {
                                 increaseScore(setScore1, score1)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker1){
+                                decreaseScore(setScore1, score1)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker1) {
                                 handleDoubleClick1()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore1, score1);
-                        }}
                     >
                         
                         <div
@@ -652,20 +650,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker2) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker2) {
                                 increaseScore(setScore2, score2)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker2){
+                                decreaseScore(setScore2, score2)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker2) {
                                 handleDoubleClick2()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore2, score2);
-                        }}
                     >
                         <div
                             style={{
@@ -727,20 +723,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker3) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker3) {
                                 increaseScore(setScore3, score3)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker3){
+                                decreaseScore(setScore3, score3)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker3) {
                                 handleDoubleClick3()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore3, score3);
-                        }}
                     >
                         <div
                             style={{
@@ -788,20 +782,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker4) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker4) {
                                 increaseScore(setScore4, score4)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker4){
+                                decreaseScore(setScore4, score4)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker4) {
                                 handleDoubleClick4()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore4, score4);
-                        }}
                     >
                         <div
                             style={{
@@ -873,20 +865,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker5) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker5) {
                                 increaseScore(setScore5, score5)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker5){
+                                decreaseScore(setScore5, score5)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker5) {
                                 handleDoubleClick5()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore5, score5);
-                        }}
                     >
                         
                         <div
@@ -936,20 +926,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker6) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker6) {
                                 increaseScore(setScore6, score6)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker6){
+                                decreaseScore(setScore6, score6)
+                            }
+                        }}
                         onDoubleClick={() =>
-                            {if (!clickBlocker2) {
+                            {if (!clickBlocker6) {
                                 handleDoubleClick6()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore6, score6);
-                        }}
                     >
                         <div
                             style={{
@@ -1011,20 +999,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker7) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker7) {
                                 increaseScore(setScore7, score7)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker7){
+                                decreaseScore(setScore7, score7)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker7) {
                                 handleDoubleClick7()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore7, score7);
-                        }}
                     >
                         <div
                             style={{
@@ -1072,20 +1058,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker8) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker8) {
                                 increaseScore(setScore8, score8)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker8){
+                                decreaseScore(setScore8, score8)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker8) {
                                 handleDoubleClick8()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore8, score8);
-                        }}
                     >
                         <div
                             style={{
@@ -1157,20 +1141,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker9) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker9) {
                                 increaseScore(setScore9, score9)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker9){
+                                decreaseScore(setScore9, score9)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker9) {
                                 handleDoubleClick9()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore9, score9);
-                        }}
                     >
                         
                         <div
@@ -1220,20 +1202,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker10) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker10) {
                                 increaseScore(setScore10, score10)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker10){
+                                decreaseScore(setScore10, score10)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker10) {
                                 handleDoubleClick10()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore10, score10);
-                        }}
                     >
                         <div
                             style={{
@@ -1295,20 +1275,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker11) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker11) {
                                 increaseScore(setScore11, score11)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker11){
+                                decreaseScore(setScore11, score11)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker11) {
                                 handleDoubleClick11()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore11, score11);
-                        }}
                     >
                         <div
                             style={{
@@ -1356,20 +1334,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker12) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker12) {
                                 increaseScore(setScore12, score12)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker12){
+                                decreaseScore(setScore12, score12)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker12) {
                                 handleDoubleClick12()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore12, score12);
-                        }}
                     >
                         <div
                             style={{
@@ -1441,20 +1417,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker13) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker13) {
                                 increaseScore(setScore13, score13)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker13){
+                                decreaseScore(setScore13, score13)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker13) {
                                 handleDoubleClick13()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore13, score13);
-                        }}
                     >
                         
                         <div
@@ -1504,20 +1478,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker14) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker14) {
                                 increaseScore(setScore14, score14)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker14){
+                                decreaseScore(setScore14, score14)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker14) {
                                 handleDoubleClick14()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore14, score14);
-                        }}
                     >
                         <div
                             style={{
@@ -1579,20 +1551,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker15) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker15) {
                                 increaseScore(setScore15, score15)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker15){
+                                decreaseScore(setScore15, score15)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker15) {
                                 handleDoubleClick15()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore15, score15);
-                        }}
                     >
                         <div
                             style={{
@@ -1640,20 +1610,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer'
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker16) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker16) {
                                 increaseScore(setScore16, score16)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker16){
+                                decreaseScore(setScore16, score16)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker16) {
                                 handleDoubleClick16()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore16, score16);
-                        }}
                     >
                         <div
                             style={{
@@ -1725,20 +1693,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker17) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker17) {
                                 increaseScore(setScore17, score17)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker17){
+                                decreaseScore(setScore17, score17)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker17) {
                                 handleDoubleClick17()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore17, score17);
-                        }}
                     >
                         
                         <div
@@ -1788,20 +1754,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker18) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker18) {
                                 increaseScore(setScore18, score18)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker18){
+                                decreaseScore(setScore18, score18)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker18) {
                                 handleDoubleClick18()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore18, score18);
-                        }}
                     >
                         <div
                             style={{
@@ -1873,20 +1837,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker19) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker19) {
                                 increaseScore(setScore19, score19)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker19){
+                                decreaseScore(setScore19, score19)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker19) {
                                 handleDoubleClick19()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore19, score19);
-                        }}
                     >
                         
                         <div
@@ -1936,20 +1898,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker20) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker20) {
                                 increaseScore(setScore20, score20)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker20){
+                                decreaseScore(setScore20, score20)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker20) {
                                 handleDoubleClick20()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore20, score20);
-                        }}
                     >
                         <div
                             style={{
@@ -2021,20 +1981,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker21) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker21) {
                                 increaseScore(setScore21, score21)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker21){
+                                decreaseScore(setScore21, score21)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker21) {
                                 handleDoubleClick21()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore21, score21);
-                        }}
                     >
                         
                         <div
@@ -2084,20 +2042,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker22) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker22) {
                                 increaseScore(setScore22, score22)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker22){
+                                decreaseScore(setScore22, score22)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker22) {
                                 handleDoubleClick22()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore22, score22);
-                        }}
                     >
                         <div
                             style={{
@@ -2169,20 +2125,18 @@ export default function MiscBars () {
                             marginTop: '6px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker23) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker23) {
                                 increaseScore(setScore23, score23)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker23){
+                                decreaseScore(setScore23, score23)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker23) {
                                 handleDoubleClick23()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore23, score23);
-                        }}
                     >
                         
                         <div
@@ -2232,20 +2186,18 @@ export default function MiscBars () {
                             marginLeft: '9px',
                             cursor: 'pointer',
                         }}
-                        onClick={() => 
-                            {if (!clickBlocker24) {
+                        onWheel={(e) => {
+                            if (e.deltaY === -100 && !clickBlocker24) {
                                 increaseScore(setScore24, score24)
-                            }}
-                        }
+                            } else if (e.deltaY === 100 && !clickBlocker24){
+                                decreaseScore(setScore24, score24)
+                            }
+                        }}
                         onDoubleClick={() =>
                             {if (!clickBlocker24) {
                                 handleDoubleClick24()
                             }}
                         }
-                        onContextMenu={(e) => {
-                            e.preventDefault();
-                            decreaseScore(setScore24, score24);
-                        }}
                     >
                         <div
                             style={{

@@ -112,9 +112,9 @@ export default function Game () {
 
     // Escenarios Nº7 ----------------------------------------------------------------------------------------------------------------------------------------
 
-    const [scenario1] = useState(['Asset 7 n1 Fondo Completo.png', 'Asset 7 Fondo scrolleable.png', 'Asset 7 n1 Fondo Desplegables.png']);
-    const [scenario2] = useState(['Asset 7 n2 Fondo completo.png', 'Asset 7 n2 Fondo scrolleable.png', 'Asset 7 n1 Fondo Desplegables.png']);
-    const [scenario3] = useState(['Asset 7 n3 Cinta superior.png', 'Asset 7 Barra de perfiles.png', 'Asset 7 n1 Fondo Desplegables.png', 'Asset 7 n3 Fondo scrolleable.png']);
+    const [scenario1] = useState(['Asset 7 n1 Fondo Completo.png', 'Asset 7 n1 Fondo scrolleable1.png', 'Asset 7 n1 Fondo scrolleable2.png', 'Asset 7 n1 Fondo Desplegables.png']);
+    const [scenario2] = useState(['Asset 7 n2 Fondo completo.png', 'Asset 7 n2 Fondo scrolleable1.png', 'Asset 7 n2 Fondo scrolleable2.png', 'Asset 7 n2 Fondo scrolleable3.png', 'Asset 7 n1 Fondo Desplegables.png']);
+    const [scenario3] = useState(['Asset 7 n3 Cinta superior.png', 'Asset 7 n3 Fondo scrolleable1.png', 'Asset 7 n3 Fondo scrolleable2.png', 'Asset 7 n3 Fondo scrolleable3.png', 'Asset 7 n3 Fondo scrolleable4.png', 'Asset 7 n3 Fondo scrolleable5.png', 'Asset 7 n3 Fondo scrolleable6.png', 'Asset 7 Barra de perfiles.png', 'Asset 7 n1 Fondo Desplegables.png']);
 
     const [scenarios] = useState([scenario1, scenario2, scenario3]);
 
@@ -347,19 +347,61 @@ export default function Game () {
         return backgroundNumber === number ? false : true;
     };
 
-    const [position, setPosition] = useState(-1920);
+    const [positionFromLeft1, setPositionFromLeft1] = useState(-1920);
+    const [positionFromLeft2, setPositionFromLeft2] = useState(-1920);
+    const [positionFromLeft3, setPositionFromLeft3] = useState(-1920);
+    const [positionFromLeft4, setPositionFromLeft4] = useState(-1920);
+    const [positionFromLeft5, setPositionFromLeft5] = useState(-1920);
+    const [positionFromLeft6, setPositionFromLeft6] = useState(-1920);
+    const [positionFromRight, setPositionFromRight] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (position < 0) {
-                setPosition(position + 1);
+            if (positionFromLeft1 < 0) {
+                setPositionFromLeft1(positionFromLeft1 + 1);
             } else {
-                setPosition(-1920);
+                setPositionFromLeft1(-1920);
+            }
+
+            if (positionFromLeft2 < 0) {
+                setPositionFromLeft2(positionFromLeft2 + 2);
+            } else {
+                setPositionFromLeft2(-1920);
+            }
+
+            if (positionFromLeft3 < 0) {
+                setPositionFromLeft3(positionFromLeft3 + 3);
+            } else {
+                setPositionFromLeft3(-1920);
+            }
+
+            if (positionFromLeft4 < 0) {
+                setPositionFromLeft4(positionFromLeft4 + 4);
+            } else {
+                setPositionFromLeft4(-1920);
+            }
+
+            if (positionFromLeft5 < 0) {
+                setPositionFromLeft5(positionFromLeft5 + 5);
+            } else {
+                setPositionFromLeft5(-1920);
+            }
+
+            if (positionFromLeft6 < 0) {
+                setPositionFromLeft6(positionFromLeft6 + 6);
+            } else {
+                setPositionFromLeft6(-1920);
+            }
+
+            if (positionFromRight > -1920) {
+                setPositionFromRight(positionFromRight - 2);
+            } else {
+                setPositionFromRight(0);
             }
         }, 100);
 
         return () => clearInterval(interval);
-    }, [position]);
+    }, [positionFromLeft1, positionFromLeft2, positionFromLeft3, positionFromLeft4, positionFromLeft5, positionFromLeft6, positionFromRight]);
 
     return (
         <div className='page-container' onMouseMove={changePosition} onClick={advanceArray}
@@ -374,7 +416,7 @@ export default function Game () {
 
             <div className='background1' hidden={isBackgroundVisible(0)}>
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][0])}
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[0][0])}
                     alt='background11'
                     style={{
                         position: 'absolute',
@@ -382,23 +424,46 @@ export default function Game () {
                     }}
                 />
 
-                <img
-                    key={backgroundNumber}
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][1])}
-                    alt='background12'
+                <div
                     style={{
                         position: 'relative',
-                        zIndex: '1',
-                        left: `${position}px`
+                        zIndex: '2',
+                        left: '0px',
+                        top: '0px',
+                        width: '1920px',
+                        height: '1080px',
+                        pointerEvents: 'none'
                     }}
-                />
+                >
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[0][1])}
+                        alt='background12'
+                        style={{
+                            position: 'absolute',
+                            zIndex: '1',
+                            left: `${positionFromLeft1}px`
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[0][2])}
+                        alt='background13'
+                        style={{
+                            position: 'absolute',
+                            zIndex: '2',
+                            left: `${positionFromRight}px`
+                        }}
+                    />
+
+                </div>
 
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][2])}
-                    alt='background13'
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[0][3])}
+                    alt='background14'
                     style={{
                         position: 'absolute',
-                        zIndex: '2',
+                        zIndex: '3',
                         left: '0px',
                         top: '0px'
                     }}
@@ -407,7 +472,7 @@ export default function Game () {
 
             <div className='background2' hidden={isBackgroundVisible(1)}>
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][0])}
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][0])}
                     alt='background21'
                     style={{
                         position: 'absolute',
@@ -415,18 +480,53 @@ export default function Game () {
                     }}
                 />
 
-                <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][1])}
-                    alt='background22'
+                <div
                     style={{
                         position: 'relative',
-                        left: `${position}px`
+                        zIndex: '0',
+                        left: '0px',
+                        top: '0px',
+                        width: '1920px',
+                        height: '1080px',
+                        pointerEvents: 'none'
                     }}
-                />
+                >
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][1])}
+                        alt='background22'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft1}px`,
+                            zIndex: '1'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][2])}
+                        alt='background23'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft2}px`,
+                            zIndex: '2'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][3])}
+                        alt='background24'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft3}px`,
+                            zIndex: '3'
+                        }}
+                    />
+
+                </div>
 
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[backgroundNumber][2])}
-                    alt='background23'
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][4])}
+                    alt='background25'
                     style={{
                         position: 'absolute',
                         zIndex: '2',
@@ -445,19 +545,83 @@ export default function Game () {
                     }}
                 />
 
-                <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][3])}
-                    alt='background32'
+                <div
                     style={{
                         position: 'relative',
-                        left: `${position}px`,
-                        zIndex: '1'
+                        zIndex: '1',
+                        left: '0px',
+                        top: '0px',
+                        width: '1920px',
+                        height: '1080px',
+                        pointerEvents: 'none'
                     }}
-                />
+                >
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][1])}
+                        alt='background32'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft1}px`,
+                            zIndex: '1'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][2])}
+                        alt='background33'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft2}px`,
+                            zIndex: '2'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][3])}
+                        alt='background34'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft3}px`,
+                            zIndex: '3'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][4])}
+                        alt='background35'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft4}px`,
+                            zIndex: '4'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][5])}
+                        alt='background36'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft5}px`,
+                            zIndex: '5'
+                        }}
+                    />
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][6])}
+                        alt='background37'
+                        style={{
+                            position: 'absolute',
+                            left: `${positionFromLeft6}px`,
+                            zIndex: '6'
+                        }}
+                    />
+
+                </div>
 
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][2])}
-                    alt='background33'
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][7])}
+                    alt='background38'
                     style={{
                         position: 'absolute',
                         zIndex: '2',
@@ -467,8 +631,8 @@ export default function Game () {
                 />
 
                 <img
-                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][1])}
-                    alt='background34'
+                    src={require('../Resources/Nº 7 Escenarios/'+scenarios[2][8])}
+                    alt='background39'
                     style={{
                         position: 'absolute',
                         zIndex: '2',
@@ -686,7 +850,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '183px',
                     left: '0px',
-                    zIndex: '2',
+                    zIndex: '3',
                     opacity: '0',
                     cursor: 'pointer'
                 }}
@@ -711,7 +875,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '183px',
                     right: '0px',
-                    zIndex: '2',
+                    zIndex: '3',
                     opacity: '0',
                     cursor: 'pointer'
                 }}
@@ -736,7 +900,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '0px',
                     left: '950px',
-                    zIndex: '2',
+                    zIndex: '3',
                     opacity: '0',
                     cursor: 'pointer'
                 }}
@@ -759,7 +923,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '204px',
                     left: '54px',
-                    zIndex: '2'
+                    zIndex: '3'
                 }}
             >
                 <MiscBars></MiscBars>
@@ -860,7 +1024,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '183px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredCondition></AlteredCondition>
@@ -871,7 +1035,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '417px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredCondition></AlteredCondition>
@@ -882,7 +1046,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '651px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredCondition></AlteredCondition>
@@ -893,7 +1057,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '885px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredCondition></AlteredCondition>
@@ -904,7 +1068,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '1145px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredConditionEnemies></AlteredConditionEnemies>
@@ -915,7 +1079,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '1379px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredConditionEnemies></AlteredConditionEnemies>
@@ -926,7 +1090,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '1613px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredConditionEnemies></AlteredConditionEnemies>
@@ -937,7 +1101,7 @@ export default function Game () {
                     position: 'absolute',
                     bottom: '93px',
                     left: '1847px',
-                    zIndex: '3'
+                    zIndex: '21'
                 }}
             >
                 <AlteredConditionEnemies></AlteredConditionEnemies>
@@ -948,10 +1112,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '455px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '485px',
                     zIndex: '7'
                 }}
             />
@@ -961,10 +1125,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '455px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '485px',
                     zIndex: '8'
                 }}
             />
@@ -988,10 +1152,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '557px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '582px',
                     zIndex: '7'
                 }}
             />
@@ -1001,10 +1165,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '557px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '582px',
                     zIndex: '8'
                 }}
             />
@@ -1028,10 +1192,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '659px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '680px',
                     zIndex: '7'
                 }}
             />
@@ -1041,10 +1205,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '659px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '680px',
                     zIndex: '8'
                 }}
             />
@@ -1068,10 +1232,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '761px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '780px',
                     zIndex: '7'
                 }}
             />
@@ -1081,10 +1245,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '761px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '780px',
                     zIndex: '8'
                 }}
             />
@@ -1108,10 +1272,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1002px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1025px',
                     zIndex: '7'
                 }}
             />
@@ -1121,10 +1285,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1002px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1025px',
                     zIndex: '8'
                 }}
             />
@@ -1148,10 +1312,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1104px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1122px',
                     zIndex: '7'
                 }}
             />
@@ -1161,10 +1325,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1104px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1122px',
                     zIndex: '8'
                 }}
             />
@@ -1188,10 +1352,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1206px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1220px',
                     zIndex: '7'
                 }}
             />
@@ -1201,10 +1365,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1206px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1220px',
                     zIndex: '8'
                 }}
             />
@@ -1228,10 +1392,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1308px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1318px',
                     zIndex: '7'
                 }}
             />
@@ -1241,10 +1405,10 @@ export default function Game () {
                 alt='table2'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '230px',
-                    left: '1308px',
+                    width: '119px',
+                    height: '119px',
+                    top: '280px',
+                    left: '1318px',
                     zIndex: '8'
                 }}
             />
@@ -1268,10 +1432,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '410px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '435px',
                     zIndex: '9'
                 }}
             />
@@ -1281,10 +1445,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '410px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '435px',
                     zIndex: '10'
                 }}
             />
@@ -1308,10 +1472,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '516px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '540px',
                     zIndex: '9'
                 }}
             />
@@ -1321,10 +1485,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '516px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '540px',
                     zIndex: '10'
                 }}
             />
@@ -1348,10 +1512,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '625px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '650px',
                     zIndex: '9'
                 }}
             />
@@ -1361,10 +1525,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '625px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '650px',
                     zIndex: '10'
                 }}
             />
@@ -1388,10 +1552,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '735px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '760px',
                     zIndex: '9'
                 }}
             />
@@ -1401,10 +1565,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '735px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '760px',
                     zIndex: '10'
                 }}
             />
@@ -1428,10 +1592,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1010px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1030px',
                     zIndex: '9'
                 }}
             />
@@ -1441,10 +1605,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1010px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1030px',
                     zIndex: '10'
                 }}
             />
@@ -1468,10 +1632,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1116px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1140px',
                     zIndex: '9'
                 }}
             />
@@ -1481,10 +1645,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1116px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1140px',
                     zIndex: '10'
                 }}
             />
@@ -1508,10 +1672,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1223px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1250px',
                     zIndex: '9'
                 }}
             />
@@ -1521,10 +1685,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1223px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1250px',
                     zIndex: '10'
                 }}
             />
@@ -1548,10 +1712,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1333px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1357px',
                     zIndex: '9'
                 }}
             />
@@ -1561,10 +1725,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '290px',
-                    left: '1333px',
+                    width: '132px',
+                    height: '132px',
+                    top: '325px',
+                    left: '1357px',
                     zIndex: '10'
                 }}
             />
@@ -1588,10 +1752,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '360px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '377px',
                     zIndex: '11'
                 }}
             />
@@ -1601,10 +1765,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '360px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '377px',
                     zIndex: '12'
                 }}
             />
@@ -1628,10 +1792,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '472px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '495px',
                     zIndex: '11'
                 }}
             />
@@ -1641,10 +1805,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '472px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '495px',
                     zIndex: '12'
                 }}
             />
@@ -1668,10 +1832,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '595px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '617px',
                     zIndex: '11'
                 }}
             />
@@ -1681,10 +1845,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '595px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '617px',
                     zIndex: '12'
                 }}
             />
@@ -1708,10 +1872,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '715px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '737px',
                     zIndex: '11'
                 }}
             />
@@ -1721,10 +1885,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '715px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '737px',
                     zIndex: '12'
                 }}
             />
@@ -1748,10 +1912,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1020px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1041px',
                     zIndex: '11'
                 }}
             />
@@ -1761,10 +1925,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1020px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1041px',
                     zIndex: '12'
                 }}
             />
@@ -1788,10 +1952,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1142px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1160px',
                     zIndex: '11'
                 }}
             />
@@ -1801,10 +1965,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1142px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1160px',
                     zIndex: '11'
                 }}
             />
@@ -1828,10 +1992,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1270px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1281px',
                     zIndex: '11'
                 }}
             />
@@ -1841,10 +2005,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1270px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1281px',
                     zIndex: '12'
                 }}
             />
@@ -1868,10 +2032,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1388px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1400px',
                     zIndex: '11'
                 }}
             />
@@ -1881,10 +2045,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '170px',
-                    height: '170px',
-                    top: '360px',
-                    left: '1388px',
+                    width: '146px',
+                    height: '146px',
+                    top: '380px',
+                    left: '1400px',
                     zIndex: '12'
                 }}
             />
@@ -1908,10 +2072,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '280px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '300px',
                     zIndex: '13'
                 }}
             />
@@ -1921,10 +2085,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '280px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '300px',
                     zIndex: '14'
                 }}
             />
@@ -1948,10 +2112,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '415px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '437px',
                     zIndex: '13'
                 }}
             />
@@ -1961,10 +2125,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '415px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '437px',
                     zIndex: '14'
                 }}
             />
@@ -1988,10 +2152,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '555px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '572px',
                     zIndex: '13'
                 }}
             />
@@ -2001,10 +2165,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '555px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '572px',
                     zIndex: '14'
                 }}
             />
@@ -2028,10 +2192,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '690px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '708px',
                     zIndex: '13'
                 }}
             />
@@ -2041,10 +2205,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '690px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '708px',
                     zIndex: '14'
                 }}
             />
@@ -2068,10 +2232,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1030px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1050px',
                     zIndex: '13'
                 }}
             />
@@ -2081,10 +2245,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1030px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1050px',
                     zIndex: '14'
                 }}
             />
@@ -2108,10 +2272,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1170px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1187px',
                     zIndex: '13'
                 }}
             />
@@ -2121,10 +2285,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1170px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1187px',
                     zIndex: '14'
                 }}
             />
@@ -2148,10 +2312,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1310px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1327px',
                     zIndex: '13'
                 }}
             />
@@ -2161,10 +2325,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1310px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1327px',
                     zIndex: '14'
                 }}
             />
@@ -2188,10 +2352,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1447px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1462px',
                     zIndex: '13'
                 }}
             />
@@ -2201,10 +2365,10 @@ export default function Game () {
                 alt='table1'
                 style={{
                     position: 'absolute',
-                    width: '180px',
-                    height: '180px',
-                    top: '440px',
-                    left: '1447px',
+                    width: '162px',
+                    height: '162px',
+                    top: '455px',
+                    left: '1462px',
                     zIndex: '14'
                 }}
             />
@@ -2231,7 +2395,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '205px',
+                    left: '208px',
                     zIndex: '15'
                 }}
             />
@@ -2244,7 +2408,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '205px',
+                    left: '208px',
                     zIndex: '16'
                 }}
             />
@@ -2271,7 +2435,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '360px',
+                    left: '363px',
                     zIndex: '15'
                 }}
             />
@@ -2284,7 +2448,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '360px',
+                    left: '363px',
                     zIndex: '16'
                 }}
             />
@@ -2311,7 +2475,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '518px',
+                    left: '520px',
                     zIndex: '15'
                 }}
             />
@@ -2324,7 +2488,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '518px',
+                    left: '520px',
                     zIndex: '16'
                 }}
             />
@@ -2391,7 +2555,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1060px',
+                    left: '1069px',
                     zIndex: '15'
                 }}
             />
@@ -2404,7 +2568,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1060px',
+                    left: '1069px',
                     zIndex: '16'
                 }}
             />
@@ -2431,7 +2595,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1212px',
+                    left: '1220px',
                     zIndex: '15'
                 }}
             />
@@ -2444,7 +2608,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1212px',
+                    left: '1220px',
                     zIndex: '16'
                 }}
             />
@@ -2471,7 +2635,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1370px',
+                    left: '1380px',
                     zIndex: '15'
                 }}
             />
@@ -2484,7 +2648,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1370px',
+                    left: '1380px',
                     zIndex: '16'
                 }}
             />
@@ -2511,7 +2675,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1525px',
+                    left: '1535px',
                     zIndex: '15'
                 }}
             />
@@ -2524,7 +2688,7 @@ export default function Game () {
                     width: '180px',
                     height: '180px',
                     top: '552px',
-                    left: '1525px',
+                    left: '1535px',
                     zIndex: '16'
                 }}
             />

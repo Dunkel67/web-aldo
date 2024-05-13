@@ -81,7 +81,8 @@ export default function EnemiesTokens ({ isClosedBlocker }) {
                     position: 'absolute',
                     width: '234px',
                     height: '237px',
-                    bottom: '0px'
+                    bottom: '0px',
+                    zIndex: '2'
                 }}
             >
             </img>
@@ -94,7 +95,7 @@ export default function EnemiesTokens ({ isClosedBlocker }) {
                     width: '234px',
                     height: '237px',
                     bottom: '0px',
-                    zIndex: '1'
+                    zIndex: '3'
                 }}
             >
             </img>

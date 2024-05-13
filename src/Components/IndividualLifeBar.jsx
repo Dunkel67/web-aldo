@@ -90,20 +90,18 @@ export default function IndividualLifeBar () {
                                 marginTop: '3px',
                                 cursor: 'pointer',
                             }}
-                            onClick={() => 
-                                {if (!clickBlocker1) {
+                            onWheel={(e) => {
+                                if (e.deltaY === -100 && !clickBlocker1) {
                                     increaseScore(setScore1, score1)
-                                }}
-                            }
+                                } else if (e.deltaY === 100 && !clickBlocker1){
+                                    decreaseScore(setScore1, score1)
+                                }
+                            }}
                             onDoubleClick={() =>
                                 {if (!clickBlocker1) {
                                     handleDoubleClick1()
                                 }}
                             }
-                            onContextMenu={(e) => {
-                                e.preventDefault();
-                                decreaseScore(setScore1, score1);
-                            }}
                         >
                             
                             <div
@@ -154,20 +152,18 @@ export default function IndividualLifeBar () {
                                 marginLeft: '9px',
                                 cursor: 'pointer',
                             }}
-                            onClick={() => 
-                                {if (!clickBlocker2) {
+                            onWheel={(e) => {
+                                if (e.deltaY === -100 && !clickBlocker2) {
                                     increaseScore(setScore2, score2)
-                                }}
-                            }
+                                } else if (e.deltaY === 100 && !clickBlocker2){
+                                    decreaseScore(setScore2, score2)
+                                }
+                            }}
                             onDoubleClick={() =>
                                 {if (!clickBlocker2) {
                                     handleDoubleClick2()
                                 }}
                             }
-                            onContextMenu={(e) => {
-                                e.preventDefault();
-                                decreaseScore(setScore2, score2);
-                            }}
                         >
                             <div
                                 style={{
