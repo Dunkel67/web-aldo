@@ -1814,7 +1814,7 @@ export default function MiscBars () {
                     width: '87px',
                     height: '39px',
                     display: 'flex',
-                    marginLeft: '148px'
+                    marginLeft: '147px'
                 }}
             >
 
@@ -1958,7 +1958,7 @@ export default function MiscBars () {
                     width: '87px',
                     height: '39px',
                     display: 'flex',
-                    marginLeft: '148px'
+                    marginLeft: '147px'
                 }}
             >
 
@@ -2102,7 +2102,7 @@ export default function MiscBars () {
                     width: '87px',
                     height: '39px',
                     display: 'flex',
-                    marginLeft: '148px'
+                    marginLeft: '147px'
                 }}
             >
 
