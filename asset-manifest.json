@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/web-aldo/static/css/main.e6c13ad2.css",
-    "main.js": "/web-aldo/static/js/main.c6f1a190.js",
+    "main.js": "/web-aldo/static/js/main.7f6361c7.js",
     "static/js/453.398c4c17.chunk.js": "/web-aldo/static/js/453.398c4c17.chunk.js",
     "static/media/Muestra_1.png": "/web-aldo/static/media/Muestra_1.41124801ae5d7ab88ade.png",
     "static/media/Asset 8 nº1 Tablero.png": "/web-aldo/static/media/Asset 8 nº1 Tablero.a1b474e26caeb487615d.png",
     "static/media/Asset 7 n3 Cinta superior.png": "/web-aldo/static/media/Asset 7 n3 Cinta superior.5bf05fd4477e3963215d.png",
     "static/media/Asset 7 n1 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n1 Fondo scrolleable1.037ac511e3e0288ec77b.png",
     "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable.7812d65bd2964a600a18.png",
-    "static/media/Asset 7 n2 Fondo completo.png": "/web-aldo/static/media/Asset 7 n2 Fondo completo.0f02c51979b9614a6160.png",
-    "static/media/Asset 7 n1 Fondo Completo.png": "/web-aldo/static/media/Asset 7 n1 Fondo Completo.20d4cf59ffaedc8e5268.png",
+    "static/media/Asset 7 n2 Fondo completo.png": "/web-aldo/static/media/Asset 7 n2 Fondo completo.e1afc68580a04524cf7d.png",
+    "static/media/Asset 7 Barra de perfiles.png": "/web-aldo/static/media/Asset 7 Barra de perfiles.a3a7398e737bdc6bdc7a.png",
+    "static/media/Asset 7 n1 Fondo Completo.png": "/web-aldo/static/media/Asset 7 n1 Fondo Completo.6875e6ab3bc5c237eea8.png",
     "static/media/Asset 7 n2 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n2 Fondo scrolleable1.ec168ff9bca99cfe9f09.png",
-    "static/media/Asset 7 Barra de perfiles.png": "/web-aldo/static/media/Asset 7 Barra de perfiles.ef6926d6595b290f5ecb.png",
     "static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.png": "/web-aldo/static/media/Asset 10 Menu bateria de seleccionables Enenigos (Menu Derecha) Scrolleable2.c921b4c231d64d248e3e.png",
     "static/media/Asset 7 n1 Cinta superior trasera.png": "/web-aldo/static/media/Asset 7 n1 Cinta superior trasera.d8a0b35df8feab87a251.png",
     "static/media/Asset 7 n1 Fondo scrolleable2.png": "/web-aldo/static/media/Asset 7 n1 Fondo scrolleable2.1111210294f0d0fd8b5e.png",
@@ -27,7 +27,11 @@
     "static/media/Asset 7 n2 Cinta superior frontal.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior frontal.80494d7f6b41da5711c3.png",
     "static/media/Asset 7 n3 Fondo scrolleable1.png": "/web-aldo/static/media/Asset 7 n3 Fondo scrolleable1.3e5d842d67d727dfc4d9.png",
     "static/media/Token Aliado 9 Meka.gif": "/web-aldo/static/media/Token Aliado 9 Meka.90b0713c860ff8b6134f.gif",
+    "static/media/Asset 12 Perfil Enemigo 1.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 1.c912135a5563b8568365.png",
+    "static/media/Asset 12 Perfil Enemigo 2.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 2.bf23a4bf523d11275f60.png",
+    "static/media/Asset 12 Perfil Enemigo 4.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 4.66d9f70f112b8a548cd3.png",
     "static/media/Asset 7 n2 Cinta superior trasera.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior trasera.58a0ba653bb9ca00ac07.png",
+    "static/media/Asset 12 Perfil Enemigo 3.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 3.85ff213e81d79152bd89.png",
     "static/media/Asset 7 n1 Cinta central frontal.png": "/web-aldo/static/media/Asset 7 n1 Cinta central frontal.d4fac9c8650a0661345a.png",
     "static/media/Asset 7 n2 Cinta superior Central.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior Central.87cd462eb756fc928aac.png",
     "static/media/Token Aliado 6 Meka.gif": "/web-aldo/static/media/Token Aliado 6 Meka.ed660987904dc96eadda.gif",
@@ -39,6 +43,12 @@
     "static/media/Asset 7 n3 Cinta central 5.png": "/web-aldo/static/media/Asset 7 n3 Cinta central 5.ed6ca341984937325bb8.png",
     "static/media/Token-Enemigo-C1-Meka.gif": "/web-aldo/static/media/Token-Enemigo-C1-Meka.973d112edc6ff1ba85ac.gif",
     "static/media/Asset 7 n3 Cinta central 6.png": "/web-aldo/static/media/Asset 7 n3 Cinta central 6.592f8e8f98cd7130022a.png",
+    "static/media/Asset 12 Perfil Enemigo 5.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 5.68bbcbd58904ccee02b3.png",
+    "static/media/Asset 12 Perfil Enemigo 10.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 10.ed019ee44c9378d103e4.png",
+    "static/media/Asset 12 Perfil Enemigo 6.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 6.6cc5b5b4b8c90afa5658.png",
+    "static/media/Asset 12 Perfil Enemigo 7.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 7.d5b5409b0ed2ac841849.png",
+    "static/media/Asset 12 Perfil Enemigo 9.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 9.84808f7ac6aed5a769cc.png",
+    "static/media/Asset 12 Perfil Enemigo 8.png": "/web-aldo/static/media/Asset 12 Perfil Enemigo 8.a2d1d9ab0193b97d2148.png",
     "static/media/Asset 7 n3 Cinta central 4.png": "/web-aldo/static/media/Asset 7 n3 Cinta central 4.8cdc3671d459ebffd665.png",
     "static/media/Asset 7 n3 Cinta central 3.png": "/web-aldo/static/media/Asset 7 n3 Cinta central 3.cafa411c7abfd91ebd8e.png",
     "static/media/Asset 10 Menu elementos especiales.png": "/web-aldo/static/media/Asset 10 Menu elementos especiales.5f6c5d7e25563f16641f.png",
@@ -54,6 +64,7 @@
     "static/media/Asset 7 n2 Cinta superior trueno B2.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior trueno B2.a10c7cf49b11ef887beb.png",
     "static/media/Asset 7 n2 Cinta superior trueno B1.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior trueno B1.4f43f20455bd8a1b0ebc.png",
     "static/media/Asset 7 n2 Cinta superior trueno A1.png": "/web-aldo/static/media/Asset 7 n2 Cinta superior trueno A1.7f02e44dc00b25f34c14.png",
+    "static/media/Asset 12 Perfil Vacio (Solapable sobre los numeros) Version villanos.png": "/web-aldo/static/media/Asset 12 Perfil Vacio (Solapable sobre los numeros) Version villanos.44eda0d613e1c64cbc3a.png",
     "static/media/Token-Enemigo-B3-Meka.gif": "/web-aldo/static/media/Token-Enemigo-B3-Meka.830995f3c2b03aa58e99.gif",
     "static/media/Token-Enemigo-B4-Meka.gif": "/web-aldo/static/media/Token-Enemigo-B4-Meka.a59cf7d9149bb125ce27.gif",
     "static/media/Token-Enemigo-B2-Meka.gif": "/web-aldo/static/media/Token-Enemigo-B2-Meka.99d1b340aadc34b7c9c6.gif",
@@ -70,11 +81,11 @@
     "static/media/Asset Nº1 Desplegable de texto nº10.png": "/web-aldo/static/media/Asset Nº1 Desplegable de texto nº10.47e25f666563e210600f.png",
     "index.html": "/web-aldo/index.html",
     "main.e6c13ad2.css.map": "/web-aldo/static/css/main.e6c13ad2.css.map",
-    "main.c6f1a190.js.map": "/web-aldo/static/js/main.c6f1a190.js.map",
+    "main.7f6361c7.js.map": "/web-aldo/static/js/main.7f6361c7.js.map",
     "453.398c4c17.chunk.js.map": "/web-aldo/static/js/453.398c4c17.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c6f1a190.js"
+    "static/js/main.7f6361c7.js"
   ]
 }
