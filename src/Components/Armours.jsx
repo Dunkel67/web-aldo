@@ -439,7 +439,7 @@ export default function Armours () {
 
             <div className='armours-5'
                 style={{
-                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base.png')})`,
+                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base2.png')})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     marginLeft: '231px',
@@ -509,7 +509,7 @@ export default function Armours () {
 
             <div className='armours-6'
                 style={{
-                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base.png')})`,
+                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base2.png')})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     marginLeft: '204px',
@@ -579,7 +579,7 @@ export default function Armours () {
 
             <div className='armours-7'
                 style={{
-                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base.png')})`,
+                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base2.png')})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     marginLeft: '204px',
@@ -649,7 +649,7 @@ export default function Armours () {
 
             <div className='armours-8'
                 style={{
-                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base.png')})`,
+                    backgroundImage: `url(${require('../Resources/Nº 15 Marcadores de armadura/Asset 15 nº 1 Base2.png')})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     marginLeft: '204px',

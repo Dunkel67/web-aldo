@@ -113,7 +113,7 @@ export default function Game () {
     // Escenarios Nº7 ----------------------------------------------------------------------------------------------------------------------------------------
 
     const [scenario1] = useState(['Asset 7 n1 Fondo Completo.png', 'Asset 7 n1 Fondo scrolleable1.png', 'Asset 7 n1 Fondo scrolleable2.png', 'Asset 7 n1 Fondo Desplegables.png']);
-    const [scenario2] = useState(['Asset 7 n2 Fondo completo.png', 'Asset 7 n2 Fondo scrolleable1.png', 'Asset 7 n2 Fondo scrolleable2.png', 'Asset 7 n2 Fondo scrolleable3.png', 'Asset 7 n1 Fondo Desplegables.png']);
+    const [scenario2] = useState(['Asset 7 n2 Fondo completo.png', 'Asset 7 n2 Fondo scrolleable1.png', 'Asset 7 n2 Fondo scrolleable2.png', 'Asset 7 n2 Fondo scrolleable3.png', 'Asset 7 n1 Fondo Desplegables.png', "Asset 7 n2 Fondo.png"]);
     const [scenario3] = useState(['Asset 7 n3 Cinta superior.png', 'Asset 7 n3 Fondo scrolleable1.png', 'Asset 7 n3 Fondo scrolleable2.png', 'Asset 7 n3 Fondo scrolleable3.png', 'Asset 7 n3 Fondo scrolleable4.png', 'Asset 7 n3 Fondo scrolleable5.png', 'Asset 7 n3 Fondo scrolleable6.png', 'Asset 7 Barra de perfiles.png', 'Asset 7 n1 Fondo Desplegables.png']);
 
     const [scenarios] = useState([scenario1, scenario2, scenario3]);
@@ -354,6 +354,7 @@ export default function Game () {
     const [positionFromLeft5, setPositionFromLeft5] = useState(-1920);
     const [positionFromLeft6, setPositionFromLeft6] = useState(-1920);
     const [positionFromRight, setPositionFromRight] = useState(0);
+    const [positionFromRight2, setPositionFromRight2] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -394,14 +395,20 @@ export default function Game () {
             }
 
             if (positionFromRight > -1920) {
-                setPositionFromRight(positionFromRight - 2);
+                setPositionFromRight(positionFromRight - 1);
             } else {
                 setPositionFromRight(0);
+            }
+
+            if (positionFromRight2 > -1920) {
+                setPositionFromRight2(positionFromRight2 - 2);
+            } else {
+                setPositionFromRight2(0);
             }
         }, 100);
 
         return () => clearInterval(interval);
-    }, [positionFromLeft1, positionFromLeft2, positionFromLeft3, positionFromLeft4, positionFromLeft5, positionFromLeft6, positionFromRight]);
+    }, [positionFromLeft1, positionFromLeft2, positionFromLeft3, positionFromLeft4, positionFromLeft5, positionFromLeft6, positionFromRight, positionFromRight2]);
 
     return (
         <div className='page-container' onMouseMove={changePosition} onClick={advanceArray}
@@ -442,7 +449,7 @@ export default function Game () {
                         style={{
                             position: 'absolute',
                             zIndex: '1',
-                            left: `${positionFromLeft1}px`
+                            left: `${positionFromRight}px`
                         }}
                     />
 
@@ -452,7 +459,7 @@ export default function Game () {
                         style={{
                             position: 'absolute',
                             zIndex: '2',
-                            left: `${positionFromRight}px`
+                            left: `${positionFromRight2}px`
                         }}
                     />
 
@@ -491,6 +498,16 @@ export default function Game () {
                         pointerEvents: 'none'
                     }}
                 >
+
+                    <img
+                        src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][5])}
+                        alt='background22'
+                        style={{
+                            position: 'absolute',
+                            left: `0px`,
+                            zIndex: '0'
+                        }}
+                    />
 
                     <img
                         src={require('../Resources/Nº 7 Escenarios/'+scenarios[1][1])}
@@ -706,7 +723,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '6px',
                     left: '12px',
-                    zIndex: '2',
+                    zIndex: '3',
                     cursor: 'pointer'
                 }}
                 onClick={() => {
@@ -738,7 +755,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '6px',
                     left: '150px',
-                    zIndex: '2',
+                    zIndex: '3',
                     cursor: 'pointer'
                 }}
                 onClick={() => {
@@ -770,7 +787,7 @@ export default function Game () {
                     position: 'absolute',
                     top: '6px',
                     left: '288px',
-                    zIndex: '2',
+                    zIndex: '3',
                     cursor: 'pointer'
                 }}
                 onClick={() => {
