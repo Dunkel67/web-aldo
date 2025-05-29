@@ -1,4 +1,5 @@
 import React from 'react';
+import menuBk from '../Resources/Nº 10 Menus de seleccion/Asset_10_Menu_bateria_de_seleccionables_Aliados_Menu_Izquierda.png';
 
 export default function AlliesTokens ({tokensAliados, handleHideAllyTokens, changeCurrentSelectedToken}) {
 
@@ -32,7 +33,7 @@ export default function AlliesTokens ({tokensAliados, handleHideAllyTokens, chan
 
             <div
                 style={{
-                    backgroundImage: `url(${require('../Resources/Nº 10 Menus de seleccion/Asset 10 Menu bateria de seleccionables Aliados (Menu Izquierda).png')})`,
+                    backgroundImage: `url(${menuBk})`,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     width: '498px',
