@@ -62,8 +62,9 @@ export default function Game () {
     const [interlocutor2] = useState(['Asset Nº2 Desplegable de selección nº2.png', 'Asset Nº2 Desplegable de texto nº2.png', 'Asset Nº3 Icono de interlocutor nº2.png']);
     const [interlocutor3] = useState(['Asset Nº2 Desplegable de selección nº3.png', 'Asset Nº2 Desplegable de texto nº3.png', 'Asset Nº3 Icono de interlocutor nº3.png']);
     const [interlocutor4] = useState(['Asset Nº2 Desplegable de selección nº4.png', 'Asset Nº2 Desplegable de texto nº4.png', 'Asset Nº3 Icono de interlocutor nº4.png']);
+    const [interlocutor5] = useState(['Asset Nº2 Desplegable de selección nº5.png', 'Asset Nº2 Desplegable de texto nº5.png', 'Asset Nº3 Icono de interlocutor nº5.png']);
 
-    const [interlocutors] = useState([interlocutor1, interlocutor2, interlocutor3, interlocutor4]);
+    const [interlocutors] = useState([interlocutor1, interlocutor2, interlocutor3, interlocutor4, interlocutor5]);
 
     const [hideInterlocutors, setHideInterlocutors] = useState(true);
 

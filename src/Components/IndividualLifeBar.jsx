@@ -50,7 +50,7 @@ export default function IndividualLifeBar () {
     };
 
     const increaseScore = (setter, score) => {
-        if (score < 9) {
+        if (score < 99) {
             setter(score + 1);
         }
     };
